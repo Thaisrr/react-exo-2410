@@ -6,6 +6,12 @@ const Home = () => {
     const games = boardgames;
     const genres = ['strategy', 'card', 'calm', 'beautiful', 'fantasy', 'humor', 'cooperative'];
 
+    const filter = function (filtre) {
+        console.log(filtre);
+        // TODO : terminer le filtre
+    }
+
+
    /* function Card2(game) {
         return (
             <div className={(game.is_best)? 'card best' : 'card'} key={'jeu_' + game.id} >
@@ -28,11 +34,11 @@ const Home = () => {
 
                 {/* Version 1 : props nommée */}
                 <div className="flex">
-                    {genres.map(g => <FiltreBtn1 filtre={g} key={g}/>)}
+                    {genres.map(g => <FiltreBtn1 filtre={g} key={g} filterFunc={filter}/>)}
                 </div>
 
                 {/* Version 2 : props children */}
-                <div className="flex">
+                <div className="flex" id="divId">
                     {genres.map(g => <FiltreBtn2 key={g}>{g}</FiltreBtn2>)}
                 </div>
 
