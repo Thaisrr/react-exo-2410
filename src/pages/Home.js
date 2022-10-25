@@ -4,7 +4,7 @@ import Card from "../components/Card";
 const Home = () => {
     const games = boardgames;
 
-    function Card2(game) {
+   /* function Card2(game) {
         return (
             <div className={(game.is_best)? 'card best' : 'card'} key={'jeu_' + game.id} >
                 <div className="c-header">
@@ -15,7 +15,7 @@ const Home = () => {
                 </div>
             </div>
         )
-    }
+    }*/
 
     return (
         <main id='Home'>
