@@ -26,9 +26,12 @@ const Home = () => {
             <section>
                 <h2>Mes Jeux</h2>
 
+                {/* Version 1 : props nommée */}
                 <div className="flex">
                     {genres.map(g => <FiltreBtn1 filtre={g} key={g}/>)}
                 </div>
+
+                {/* Version 2 : props children */}
                 <div className="flex">
                     {genres.map(g => <FiltreBtn2 key={g}>{g}</FiltreBtn2>)}
                 </div>
