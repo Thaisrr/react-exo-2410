@@ -1,10 +1,10 @@
 import {boardgames} from "../utils/Games";
-import '../style/Card.css';
+import Card from "../components/Card";
 
 const Home = () => {
     const games = boardgames;
 
-    function getCard(game) {
+    function Card2(game) {
         return (
             <div className={(game.is_best)? 'card best' : 'card'} key={'jeu_' + game.id} >
                 <div className="c-header">
@@ -25,10 +25,16 @@ const Home = () => {
                 <h2>Mes Jeux</h2>
 
                 <div className='grid centered'>
-                    {games.map(game => getCard(game))}
+                    {games.map(game => <Card game={game} key={game.id}/>)}
+                    {/*
+                    Cette syntaxe :
+                          <Card2 game={g}/>
+                    Est (quasi) la version React de :
+                        {Card2(g)}
+                    */}
+
                 </div>
             </section>
-
         </main>
     );
 }

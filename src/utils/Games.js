@@ -39,7 +39,7 @@ export const boardgames = [
         maxPlayers: 8,
         minAge: 10,
         duration: 30,
-        image: './images/codenames.png',
+        image: './images/codename.png',
         is_best: false,
         genres: ['strategy', 'card', ]
     },
@@ -110,3 +110,5 @@ export const boardgames = [
         genres: ['strategy', 'card', 'calm', 'beautiful']
     },
 ]
+
+export const genres = ['strategy', 'card', 'calm', 'beautiful', 'fantasy', 'humor', 'cooperative'];
