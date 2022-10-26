@@ -31,12 +31,12 @@ h1, h2, h3, .subtitle {
 }
 
 .centered {
-  width: 80%;
-  margin: auto;
+
 }
 
 main {
-  margin: 200px auto;
+  margin: 100px auto;
+  width: 80%;
 }
 
 .grid {

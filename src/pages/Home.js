@@ -1,11 +1,21 @@
-import {boardgames} from "../utils/Games";
 import Card from "../components/Card";
 import {FiltreBtn1, FiltreBtn2} from "../components/FiltreBtn";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {getGames} from "../utils/services/BoardGamesService";
 
 const Home = () => {
-    const [games, setGames] = useState(boardgames);
+    const [games, setGames] = useState(undefined);
     const genres = ['strategy', 'card', 'calm', 'beautiful', 'fantasy', 'humor', 'cooperative'];
+    const [is_loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        //getGames().then(g => setGames(g));
+        const load = async () => {
+            setGames(await getGames());
+            setLoading(false);
+        }
+        setTimeout(() => load(), 3000 )
+    }, [])
 
     const filter = function (filtre) {
         console.log(filtre);
@@ -16,19 +26,18 @@ const Home = () => {
         setGames([]);
     }
 
+    const Content = () => {
+        if(is_loading) return <p>Chargement en cours</p>
+        if(games?.length) return <GamesGrid/>
+        return <p>Aucun jeu à afficher</p>
+    }
 
-   /* function Card2(game) {
-        return (
-            <div className={(game.is_best)? 'card best' : 'card'} key={'jeu_' + game.id} >
-                <div className="c-header">
-                    <img className='img' src={game.image} alt=''/>
-                </div>
-                <div className="c-body">
-                    <h3>{game.name}</h3>
-                </div>
-            </div>
-        )
-    }*/
+    const GamesGrid = () => (
+        <div className='grid'>
+            {games.map(game => <Card game={game} key={game.id}/>)}
+        </div>
+    )
+
 
     return (
         <main id='Home'>
@@ -42,29 +51,8 @@ const Home = () => {
                     {genres.map(g => <FiltreBtn1 filtre={g} key={g} filterFunc={filter}/>)}
                 </div>
 
-                {/* Version 2 : props children */}
-                <div className="flex" id="divId">
-                    {genres.map(g => <FiltreBtn2 key={g}>{g}</FiltreBtn2>)}
-                    <button className='danger' onClick={purge}>Purger</button>
-                </div>
-
-                {games.length ?
-                    (
-                        <div className='grid'>
-                            {games.map(game => <Card game={game} key={game.id}/>)}
-                        </div>
-                    ) :
-                    <p>Aucun jeu à afficher</p>
-                }
+                <Content/>
             </section>
-
-
-            {/*
-                    Cette syntaxe :
-                          <Card2 game={g}/>
-                    Est (quasi) la version React de :
-                        {Card2(g)}
-                    */}
         </main>
     );
 }
