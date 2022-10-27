@@ -22,10 +22,6 @@ const Home = () => {
         // TODO : terminer le filtre
     }
 
-    const purge = () => {
-        setGames([]);
-    }
-
     const Content = () => {
         if(is_loading) return <p>Chargement en cours</p>
         if(games?.length) return <GamesGrid/>

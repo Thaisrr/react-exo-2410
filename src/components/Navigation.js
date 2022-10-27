@@ -11,6 +11,9 @@ const Navigation = () => {
                 <li>
                     <NavLink to={'/login'}>Connexion</NavLink>
                 </li>
+                <li>
+                    <NavLink to={'/create'}>Nouveau</NavLink>
+                </li>
             </ul>
         </nav>
     )

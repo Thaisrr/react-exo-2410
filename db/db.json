@@ -1,5 +1,5 @@
 {
-  "boardgames" : [
+  "boardgames": [
     {
       "id": 1,
       "name": "7 Wonders",
@@ -155,6 +155,26 @@
         "calm",
         "beautiful"
       ]
+    },
+    {
+      "name": "Test Nom",
+      "image": "img.jpg",
+      "minPlayers": "2",
+      "maxPlayers": "5",
+      "age": "7",
+      "duration": "30",
+      "best": false,
+      "id": 11
+    },
+    {
+      "name": "Encore un jeu",
+      "image": "image.png",
+      "minPlayers": "2",
+      "maxPlayers": "5",
+      "age": "7",
+      "duration": "30",
+      "best": true,
+      "id": 12
     }
   ]
 }

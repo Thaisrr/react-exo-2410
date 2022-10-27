@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
 import Connection from "./pages/Connection";
 import Navigation from "./components/Navigation";
+import GameForm from "./pages/GameForm";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/login" element={<Connection/>}/>
+            <Route path='/create' element={<GameForm/>} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -11,3 +11,12 @@ export const getGames = async () => {
         console.log('Nope');
     }
 }
+
+export const saveGame = async (game) => {
+    try {
+        const {data} = await axios.post(game_url, game);
+        return data;
+    } catch (e) {
+        console.log(e);
+    }
+}
