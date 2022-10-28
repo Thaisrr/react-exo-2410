@@ -1,21 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Luckiest+Guy&family=Quicksand&display=swap');
 
 :root {
-  --font-main: 'Comfortaa', cursive;
+  --font-secondary: 'Comfortaa', cursive;
   --font-title: 'Luckiest Guy', cursive;
-  --font-family: 'Quicksand', sans-serif;
+  --font-main: 'Quicksand', sans-serif;
+
+  --neutral: #648381ff;
+  --light: #f0f0c9ff;
+  --main: #f2bb05ff;
+  --secondary: #eb550aff;
+  --dark: #30323dff;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-main);
+  color: var(--dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  font-family: var(--font-title);
+  color: var(--secondary);
 }
+
+h2, h3 {
+  font-family: var(--font-secondary);
+}
+
+h2 {color: var(--main)}
+h2 {color: var(--neutral)}

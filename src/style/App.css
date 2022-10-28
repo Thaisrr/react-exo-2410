@@ -44,6 +44,10 @@ main {
   grid-template-columns: repeat(4, 1fr);
 }
 
+.grid.col2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .flex {
   display: flex;
   gap: 10px;

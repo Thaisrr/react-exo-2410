@@ -17,13 +17,12 @@
 }
 
 .c-header img {
-    height: 115px;
+    height: 180px;
     max-width: 60%;;
 }
 
 .c-body {
     transition: all .3s;
-    background-color: white;
     border-radius: 8px;
     text-align: center;
     padding: 60px 15px 15px;
@@ -33,6 +32,11 @@
 .card:hover .c-header {
     animation: float 1.5s linear infinite alternate;
     box-shadow: 2px 2px 8px rgba(0, 0, 0 , .5%);
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
 }
 
 .card a {
@@ -58,7 +62,7 @@
 
 
 .card:hover .c-body {
-    background-color: #ffdf93;
+    background-color: var(--main);
 }
 
 @keyframes float {
