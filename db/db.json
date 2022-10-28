@@ -176,5 +176,13 @@
       "best": true,
       "id": 12
     }
+  ],
+  "users": [
+    {
+      "email": "toto@mail.fr",
+      "password": "$2a$10$KGmdqEeeYWy10bSPxz/IyeNKIFjFGy2X7e30Vo4bHqK1xTM/k1rZy",
+      "username": "Toto",
+      "id": 1
+    }
   ]
 }
