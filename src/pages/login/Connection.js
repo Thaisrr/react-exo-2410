@@ -3,7 +3,7 @@ import {useState} from "react";
 import {useForm} from "react-hook-form";
 import {connect} from "../../utils/services/AuthService";
 import {useDispatch} from "react-redux";
-import {create} from "../../store/alert";
+import {create, deleteAlert} from "../../store/alert";
 
 const Connection = () => {
     const [error, setError] = useState('');
@@ -17,6 +17,7 @@ const Connection = () => {
         console.log(res)
         if(res) {
             dispatch(create({txt: 'Bon retour parmis nous !', lvl: 'success'}))
+            setTimeout(() => deleteAlert(), 2000)
             navigate('/')
         }
         else {

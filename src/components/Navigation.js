@@ -1,7 +1,7 @@
 import {NavLink} from "react-router-dom";
 import {isLogged, logout} from "../utils/services/AuthService";
 import {useDispatch} from "react-redux";
-import {create} from "../store/alert";
+import {create, deleteAlert} from "../store/alert";
 
 const Navigation = () => {
 
@@ -10,8 +10,15 @@ const Navigation = () => {
     const deconnexion = () => {
         logout();
         dispatch(create({txt: 'Déconnecté⋅e !'}))
+        setTimeout(() => deleteAlert(), 2000)
+
     }
 
+    /**
+     *
+     * @return {JSX.Element}
+     * @constructor
+     */
     const ConnectedLinks = () => (
         <>
             <li>
