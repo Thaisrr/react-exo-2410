@@ -9,12 +9,13 @@ import Login from "./pages/login/Login";
 import Register from "./pages/login/Register";
 import {UserGuard} from "./pages/guards/UserGuard";
 import Spinner from "./components/Spinner";
+import DialogAlert from "./components/DialogAlert";
 
 const GameForm = React.lazy(() => import("./pages/GameForm"));
 
 function App() {
 
-    console.info(process.env.REACT_APP_MODE);
+    console.info(process.env.REACT_APP_ENV);
 
 
 
@@ -32,6 +33,8 @@ function App() {
                   </Route>
               </Routes>
           </Suspense>
+
+          <DialogAlert/>
       </BrowserRouter>
     </div>
   );

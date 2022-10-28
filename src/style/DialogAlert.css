@@ -1,0 +1,27 @@
+.alert.info {
+    --main-color: teal
+}
+
+.alert.success {
+    --main-color: green;
+}
+
+.alert.error {
+    --main-color: red;
+}
+
+#DialogAlert {
+    position: fixed;
+    bottom: 0;
+    padding: 30px 0;
+    width: 100vw;
+}
+
+.alert {
+    width: 50%;
+    margin: auto;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    color: white;
+}

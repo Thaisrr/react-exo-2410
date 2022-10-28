@@ -1,7 +1,16 @@
 import {NavLink} from "react-router-dom";
 import {isLogged, logout} from "../utils/services/AuthService";
+import {useDispatch} from "react-redux";
+import {create} from "../store/alert";
 
 const Navigation = () => {
+
+    const dispatch = useDispatch();
+
+    const deconnexion = () => {
+        logout();
+        dispatch(create({txt: 'Déconnecté⋅e !'}))
+    }
 
     const ConnectedLinks = () => (
         <>
@@ -9,7 +18,7 @@ const Navigation = () => {
                 <NavLink to={'/create'}>Nouveau</NavLink>
             </li>
             <li>
-                <button onClick={() => logout()}>Déconnexion</button>
+                <button onClick={() => deconnexion()}>Déconnexion</button>
             </li>
         </>
     );
